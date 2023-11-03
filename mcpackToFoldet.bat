@@ -1,3 +1,4 @@
+
 @echo off
 
 rem Tên tệp python.
