@@ -1,6 +1,6 @@
 @echo off
 
-rem Tên tệp python
+rem Tên tệp python.
 python mcpackToFoldet.py
 
 pause
