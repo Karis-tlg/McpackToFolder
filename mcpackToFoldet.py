@@ -7,10 +7,10 @@ ext = (".zip", ".mcpack")
 
 for file in glob.glob(os.path.join(root, "*")):
     if file.endswith(ext):
-        print(f"Extracted: {file}")
         try:
             with zipfile.ZipFile(file, "r") as zip_ref:
                 zip_ref.extractall(root)
+                print(f"Extracted: {file}")
             os.remove(file)
         except Exception as e:
             print(f"An error occurred while extracting {file}: {e}")
