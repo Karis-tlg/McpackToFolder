@@ -1,15 +1,16 @@
 import glob
 import os
-import zipfile as zip
+import zipfile
 
 root = input("Enter the directory path: ")
 ext = (".zip", ".mcpack")
 
-for file in glob.glob(f"{root}/**/*", recursive = True):
+for file in glob.glob(f"{root}/*", recursive=True):
     if file.endswith(ext):
         try:
-            with zip.ZipFile(file, "r") as zipr:
-                zipr.extractall(root)
+            with zipfile.ZipFile(file, "r") as zip:
+                folder = os.path.splitext(os.path.basename(file))[0]
+                zip.extractall(os.path.join(root, folder))              
                 print(f"Extracted: {file}")
             os.remove(file)
         except Exception as e:
