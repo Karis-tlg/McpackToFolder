@@ -4,7 +4,7 @@
  
 To run:
 ```
-mcpackToFoldet.bat
+mcpackToFolder.bat
 ```
 
 Enter the path into 
