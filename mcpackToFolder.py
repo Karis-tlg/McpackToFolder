@@ -5,6 +5,10 @@ import zipfile
 root = input("Enter the directory path: ")
 ext = (".zip", ".mcpack")
 
+if not os.path.exists(root):
+    print(f"Error: The specified directory path does not exist")
+    exit()
+
 for file in glob.glob(f"{root}/*", recursive=True):
     if file.endswith(ext):
         try:
